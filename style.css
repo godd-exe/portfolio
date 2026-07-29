@@ -316,7 +316,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: rgba(7, 7, 10, 0.5); /* Keeps the section transparent enough to see the orbs */
+  background: rgba(7, 7, 10, 0.5); 
   z-index: 2;
 }
 
@@ -443,7 +443,7 @@ body {
   height: 310px;
   border-radius: 12px;
   overflow: hidden;
-  background: #ffffff; /* White background prevents dark mode artifacts behind PDFs */
+  background: #ffffff; 
   border: 1px solid rgba(0, 255, 204, 0.3);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   display: flex;
@@ -463,7 +463,7 @@ body {
   width: 100%;
   height: 100%;
   border: none;
-  pointer-events: none; /* Prevents scrolling the iframe inside the thumbnail */
+  pointer-events: none; 
   opacity: 0.9;
   transition: opacity 0.3s ease, transform 0.4s ease;
 }
@@ -473,7 +473,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Invisible overlay to catch clicks before they hit the iframe */
 .iframe-click-shield {
   position: absolute;
   inset: 0;
@@ -563,11 +562,10 @@ body {
   margin-bottom: 25px;
   display: flex;
   justify-content: center;
-  background: #fff; /* Ensure PDF background is white */
+  background: #fff; 
   border-radius: 8px;
 }
 
-/* Document view layout style within Modal */
 .cert-doc-view {
   width: 100%;
   height: 500px;
@@ -623,12 +621,69 @@ body {
   box-shadow: 0 10px 20px rgba(0, 255, 204, 0.2);
 }
 
+/* =========================================================
+   MOBILE RESPONSIVENESS OVERRIDES
+   These rules automatically trigger on screens 900px or smaller.
+   This guarantees the site optimizes itself dynamically for phones!
+   ========================================================= */
 @media (max-width: 900px) {
-  .skills-grid { grid-template-columns: 1fr; }
-  .skill-card { height: auto; min-height: 320px; }
-  .cert-content { grid-template-columns: 1fr; padding: 20px; }
-  .cert-preview { height: 220px; }
+  
+  /* Hero Auto-Adjust */
+  .title { font-size: 2.6rem; }
+  .subtitle { font-size: 1rem; margin-top: 15px; line-height: 1.4; }
+  .content-wrapper { text-align: center; padding: 0 20px; }
+
+  /* About Auto-Adjust */
+  #about { flex-direction: column; text-align: center; padding: 80px 5%; gap: 20px; }
+  .cyber-hexagon { width: 120px; height: 120px; margin: 0 auto; }
+  .text-container h2 { font-size: 2rem; }
+  .info-text { font-size: 1rem; }
+
+  /* Skills Auto-Adjust: Increases the height so text never spills out */
+  .skills-grid { grid-template-columns: 1fr; gap: 20px; }
+  .skill-card { height: 550px; } 
+  .section-header h2 { font-size: 2rem; }
+  .card-front, .card-back { padding: 25px 20px; }
+  .skill-bullets li { font-size: 0.9rem; margin-bottom: 12px; }
+
+  /* Certificates Auto-Adjust: Prevents header overlap and adds internal scrolling */
+  .certs-fixed-header { top: 20px; }
+  .certs-fixed-header h2 { font-size: 1.6rem; }
+  
+  .cert-card { 
+    padding: 130px 5% 40px 5%; /* Forces the main content down, away from the header */
+    align-items: flex-start; /* Stops the content from centering and crashing into the top */
+  }
+  
+  .cert-content {
+    grid-template-columns: 1fr;
+    padding: 20px 15px;
+    gap: 15px;
+    max-height: calc(100vh - 150px); /* Makes the inner box scrollable if the phone screen is very short */
+    overflow-y: auto; 
+  }
+
+  .cert-content::-webkit-scrollbar { width: 6px; }
+  .cert-content::-webkit-scrollbar-thumb { background: var(--accent-cyan); border-radius: 6px; }
+  
+  .cert-info h3 { font-size: 1.5rem; margin: 5px 0; }
+  .cert-date { font-size: 0.85rem; margin-bottom: 10px; }
+  .cert-highlights { margin-bottom: 15px; }
+  .cert-highlights li { font-size: 0.85rem; margin-bottom: 6px; }
+  
+  .cert-preview { height: 160px; } 
   .cert-doc-view { height: 350px; }
-  .title { font-size: 3rem; }
-  .button-group { flex-direction: column; }
+  .cert-btn { padding: 12px 15px; font-size: 0.85rem; width: 100%; text-align: center; }
+
+  /* Contact Auto-Adjust */
+  #contact h2 { font-size: 2.2rem; }
+  .button-group { flex-direction: column; width: 100%; padding: 0 20px; }
+  .btn { width: 100%; text-align: center; padding: 15px; }
+}
+
+/* Touch Device Optimizer: Removes hover states for mobile to stop "double tap to open" bugs */
+@media (hover: none) {
+  .btn:hover, .cert-btn:hover { transform: none; box-shadow: none; }
+  .cert-preview:hover { transform: none; border-color: rgba(0, 255, 204, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); }
+  .cert-preview:hover .cert-thumb-doc { opacity: 0.9; transform: none; }
 }
