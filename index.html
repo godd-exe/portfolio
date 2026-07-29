@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalpesh Pawar | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+  <!-- Background Abstract Floating Layer -->
+  <div class="abstract-bg-overlay">
+    <svg class="shape shape-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="rgba(0, 255, 204, 0.15)" d="M44.7,-56.4C56.8,-45.6,64.8,-30.3,67.2,-14.3C69.6,1.7,66.5,18.3,58.1,32.5C49.7,46.7,36,58.5,20.2,63.7C4.4,68.9,-13.5,67.5,-29.4,60.8C-45.3,54.1,-59.2,42.1,-66.2,26.4C-73.2,10.7,-73.3,-8.7,-66.3,-25.1C-59.3,-41.5,-45.2,-54.9,-30.2,-64.3C-15.2,-73.7,0.7,-79.1,15.8,-76.3C30.9,-73.5,32.6,-67.2,44.7,-56.4Z" transform="translate(100 100)" />
+    </svg>
+    <svg class="shape shape-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="100,10 186,60 186,160 100,210 14,160 14,60" fill="none" stroke="rgba(112, 0, 255, 0.25)" stroke-width="3" />
+    </svg>
+    <svg class="shape shape-3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(0, 136, 255, 0.2)" stroke-width="2" stroke-dasharray="10 15" />
+    </svg>
+    <svg class="shape shape-4" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="rgba(0, 255, 102, 0.1)" d="M39.5,-51.5C50.2,-41.5,58.3,-28.9,63.1,-14.8C67.9,-0.7,69.4,14.9,63.6,27.2C57.7,39.5,44.5,48.5,30.5,55.1C16.5,61.8,1.7,66.1,-13.2,64.2C-28.1,62.2,-43.1,54.1,-53.4,41.4C-63.7,28.7,-69.3,11.4,-67.7,-4.8C-66.2,-21,-57.4,-36.2,-44.6,-45.8C-31.8,-55.4,-15.9,-59.4,-0.6,-58.8C14.7,-58.2,28.8,-61.5,39.5,-51.5Z" transform="translate(100 100)" />
+    </svg>
+
+    <div class="glowing-orb orb-1"></div>
+    <div class="glowing-orb orb-2"></div>
+    <div class="glowing-orb orb-3"></div>
+    <div class="glowing-orb orb-4"></div>
+    <div class="glowing-orb orb-5"></div>
+  </div>
+
+  <!-- Toast Notification for Email Copy -->
+  <div id="toast" class="toast">Email Copied to Clipboard!</div>
+
+  <!-- Interactive Certificate Preview Modal -->
+  <div id="certModal" class="cert-modal-overlay">
+    <div class="cert-modal-container">
+      <button id="closeModal" class="modal-close-btn">&times;</button>
+      <div class="modal-cert-header">
+        <span class="badge" id="modalBadgeTag">VERIFIED CREDENTIAL</span>
+        <h3 id="modalCertTitle">Certificate Title</h3>
+        <p id="modalCertIssuer">Issuer Name</p>
+      </div>
+      <div class="modal-cert-body">
+        <!-- Clean embedded PDF view for the Modal -->
+        <iframe id="modalCertDoc" src="" class="cert-doc-view" frameborder="0"></iframe>
+      </div>
+      <div class="modal-cert-footer">
+        <a id="modalPdfLink" href="#" target="_blank" class="btn btn-primary">📄 Open Original Document File</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="panel">
+    <div class="content-wrapper">
+      <div class="badge">SECURE // DEVELOP // OPTIMIZE</div>
+      <h1 class="title">Kalpesh Pawar</h1>
+      <p class="subtitle">Computer Engineering | Ethical Hacking & Networking</p>
+    </div>
+  </section>
+
+  <!-- About & Twist Section -->
+  <section id="about" class="panel">
+    <div class="animation-container">
+       <div class="tech-graphic">
+         <svg class="cyber-hexagon" viewBox="0 0 100 100">
+           <polygon points="50,3 93,25 93,75 50,97 7,75 7,25" fill="none" stroke="#00ffcc" stroke-width="2" />
+           <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#00ffcc" font-size="28">🛡️</text>
+         </svg>
+       </div> 
+    </div>
+    <div class="text-container">
+       <h2>Engineering & Security Mindset</h2>
+       <p class="info-text">
+         Operating primarily in a <strong>Parrot OS</strong> environment, I bridge low-level core development with active web security. From analyzing packet flows across DNS, DHCP, and TCP/IP stacks to engineering database queries with MongoDB and PL/SQL, I focus on building systems that are resilient by design.
+       </p>
+    </div>
+  </section>
+
+  <!-- 2x2 Grid Cumulative 3D Flip Cards Section -->
+  <section id="skills" class="panel skills-section">
+    <div class="skills-container">
+      <div class="section-header">
+        <span class="badge">CORE COMPETENCIES</span>
+        <h2>Technical Knowledge & Skills</h2>
+        <p class="section-desc">Scroll down to flip each card, or click directly to toggle.</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- CARD 1: Cyber Security & Ethical Hacking -->
+        <div class="skill-card cyber-card" id="card-0">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-icon">🛡️</span>
+              <h3>1. Ethical Hacking & Security</h3>
+              <span class="flip-hint">Click or Scroll to Flip ↻</span>
+            </div>
+            <div class="card-back">
+              <div class="card-back-header">
+                <span class="card-icon">🛡️</span>
+                <h3>Ethical Hacking & Security</h3>
+              </div>
+              <ul class="skill-bullets">
+                <li><strong>OWASP Top 10:</strong> Vulnerability testing for SQL Injection (SQLi), XSS, and CSRF.</li>
+                <li><strong>Penetration Testing Lifecycle:</strong> Reconnaissance, enumeration, exploitation, and post-exploitation reporting.</li>
+                <li><strong>Network Traffic Sniffing:</strong> Packet inspection using Wireshark and Parrot OS security utilities.</li>
+                <li><strong>Ethical Hacking Labs:</strong> Practical challenge labs in TryHackMe rooms and AttackBox environments.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: Computer Networking -->
+        <div class="skill-card network-card" id="card-1">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-icon">🌐</span>
+              <h3>2. Computer Networking</h3>
+              <span class="flip-hint">Click or Scroll to Flip ↻</span>
+            </div>
+            <div class="card-back">
+              <div class="card-back-header">
+                <span class="card-icon">🌐</span>
+                <h3>Computer Networking</h3>
+              </div>
+              <ul class="skill-bullets">
+                <li><strong>OSI & TCP/IP Architecture:</strong> Packet routing, encapsulation dynamics, and TCP/UDP transport logic.</li>
+                <li><strong>Subnetting & Addressing:</strong> IPv4 VLSM subnetting strategies and IPv6 allocation schemes.</li>
+                <li><strong>Network Services:</strong> Configuration and diagnostics for DNS, DHCP, ARP, and ICMP protocols.</li>
+                <li><strong>Cisco Hardware:</strong> Cisco IOS switch/router CLI management and secure wireless setup.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Object-Oriented Programming (OOP) -->
+        <div class="skill-card oop-card" id="card-2">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-icon">🧩</span>
+              <h3>3. Object-Oriented Programming</h3>
+              <span class="flip-hint">Click or Scroll to Flip ↻</span>
+            </div>
+            <div class="card-back">
+              <div class="card-back-header">
+                <span class="card-icon">🧩</span>
+                <h3>Object-Oriented Programming</h3>
+              </div>
+              <ul class="skill-bullets">
+                <li><strong>Encapsulation:</strong> Protecting internal state using access modifiers and getters/setters.</li>
+                <li><strong>Inheritance & Polymorphism:</strong> Virtual function tables, method overriding, and dynamic binding.</li>
+                <li><strong>Abstraction:</strong> Decoupling system logic using robust abstract base classes and interfaces.</li>
+                <li><strong>Clean Architecture:</strong> Reusable design patterns and structured memory execution in C++ and Python.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: Data Structures & Algorithms (DSA) -->
+        <div class="skill-card dsa-card" id="card-3">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-icon">⚡</span>
+              <h3>4. Data Structures & Algorithms</h3>
+              <span class="flip-hint">Click or Scroll to Flip ↻</span>
+            </div>
+            <div class="card-back">
+              <div class="card-back-header">
+                <span class="card-icon">⚡</span>
+                <h3>Data Structures & Algorithms</h3>
+              </div>
+              <ul class="skill-bullets">
+                <li><strong>Data Structures:</strong> Arrays, Linked Lists, Stacks, Queues, Hash Maps, and Trees.</li>
+                <li><strong>Algorithmic Strategies:</strong> Binary Search, Quick Sort, Merge Sort, and Divide-and-Conquer paradigms.</li>
+                <li><strong>Complexity Analysis:</strong> Big-O time and space optimization for efficiency.</li>
+                <li><strong>System Performance:</strong> Recursion call-stack tuning, pointer arithmetic, and heap allocation.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section Container (Interactive Certificate Cards) -->
+  <section id="certs-section" class="certs-section-container">
+    <div class="certs-fixed-header">
+      <span class="badge">VERIFIED CREDENTIALS</span>
+      <h2>Certifications & Achievements</h2>
+    </div>
+
+    <div id="certs-viewport">
+      <div class="cert-wrapper">
+
+        <!-- CARD 1: CEH CERTIFICATE -->
+        <div class="cert-card" id="ceh-card">
+          <div class="cert-content">
+            <div class="cert-info">
+              <span class="cert-tag">WsCube Tech • Reg: WS/2026/1/54532</span>
+              <h3>Ethical Hacking Bootcamp</h3>
+              <p class="cert-date">Issued: 06 Apr 2026 | Grade: A+ (Above 75%)</p>
+              <ul class="cert-highlights">
+                <li>Successfully completed 2 Months of intensive Ethical Hacking Bootcamp training.</li>
+                <li>Demonstrated active engagement in practical web vulnerability testing and security projects.</li>
+                <li>Earned top-tier Grade A+ distinction certified under ISO 9001:2015 quality standards.</li>
+              </ul>
+              <button class="cert-preview-trigger cert-btn" 
+                data-title="Ethical Hacking Bootcamp"
+                data-issuer="WsCube Tech"
+                data-tag="WsCube Tech • Reg: WS/2026/1/54532"
+                data-pdf="CEh.pdf"
+                data-doc="CEh.pdf">
+                🔍 View Original Certificate
+              </button>
+            </div>
+            <div class="cert-preview cert-interactive-thumb" 
+              data-title="Ethical Hacking Bootcamp"
+              data-issuer="WsCube Tech"
+              data-tag="WsCube Tech • Reg: WS/2026/1/54532"
+              data-pdf="CEh.pdf"
+              data-doc="CEh.pdf">
+              <iframe src="CEh.pdf#toolbar=0&navpanes=0&scrollbar=0" class="cert-thumb-doc" frameborder="0" scrolling="no"></iframe>
+              <div class="iframe-click-shield"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: Cisco Networking Basics -->
+        <div class="cert-card">
+          <div class="cert-content">
+            <div class="cert-info">
+              <span class="cert-tag">Cisco Networking Academy</span>
+              <h3>Networking Basics</h3>
+              <p class="cert-date">Issued: January 10, 2026</p>
+              <ul class="cert-highlights">
+                <li>Mastered network communication protocols, ethernet architecture, and topology models.</li>
+                <li>Configured and managed IPv4 and IPv6 addressing schemes.</li>
+                <li>Engineered secure wireless access router environments and end-to-end network diagnostics.</li>
+              </ul>
+              <button class="cert-preview-trigger cert-btn" 
+                data-title="Networking Basics"
+                data-issuer="Cisco Networking Academy"
+                data-tag="Cisco Networking Academy"
+                data-pdf="cisco_networking_basics.pdf"
+                data-doc="cisco_networking_basics.pdf">
+                🔍 View Original Certificate
+              </button>
+            </div>
+            <div class="cert-preview cert-interactive-thumb" 
+              data-title="Networking Basics"
+              data-issuer="Cisco Networking Academy"
+              data-tag="Cisco Networking Academy"
+              data-pdf="cisco_networking_basics.pdf"
+              data-doc="cisco_networking_basics.pdf">
+              <iframe src="cisco_networking_basics.pdf#toolbar=0&navpanes=0&scrollbar=0" class="cert-thumb-doc" frameborder="0" scrolling="no"></iframe>
+              <div class="iframe-click-shield"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Cisco Networking Devices & Initial Config -->
+        <div class="cert-card">
+          <div class="cert-content">
+            <div class="cert-info">
+              <span class="cert-tag">Cisco Networking Academy</span>
+              <h3>Networking Devices & Config</h3>
+              <p class="cert-date">Issued: January 11, 2026</p>
+              <ul class="cert-highlights">
+                <li>Configured Cisco switch and router hardware using Cisco IOS CLI commands.</li>
+                <li>Implemented IPv4 subnetting to segment local area network traffic efficiently.</li>
+                <li>Analyzed operations of ARP, DNS, DHCP, and Transport Layer TCP/UDP protocols.</li>
+              </ul>
+              <button class="cert-preview-trigger cert-btn" 
+                data-title="Networking Devices & Config"
+                data-issuer="Cisco Networking Academy"
+                data-tag="Cisco Networking Academy"
+                data-pdf="cisco_initial_config.pdf"
+                data-doc="cisco_initial_config.pdf">
+                🔍 View Original Certificate
+              </button>
+            </div>
+            <div class="cert-preview cert-interactive-thumb" 
+              data-title="Networking Devices & Config"
+              data-issuer="Cisco Networking Academy"
+              data-tag="Cisco Networking Academy"
+              data-pdf="cisco_initial_config.pdf"
+              data-doc="cisco_initial_config.pdf">
+              <iframe src="cisco_initial_config.pdf#toolbar=0&navpanes=0&scrollbar=0" class="cert-thumb-doc" frameborder="0" scrolling="no"></iframe>
+              <div class="iframe-click-shield"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact & Resume -->
+  <section id="contact" class="panel">
+     <h2>Ready to Collaborate?</h2>
+     <p>Open for Software Engineering, Cyber Security, and Infrastructure roles.</p>
+     <div class="button-group">
+       <button id="email-btn" data-email="iamkalpesh9807@gmail.com" class="btn btn-primary">Email Me</button>
+       <a href="https://github.com/godd-exe" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+       <a href="resume.pdf" download class="btn btn-accent">Download Resume</a>
+     </div>
+  </section>
+
+  <!-- GSAP Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
